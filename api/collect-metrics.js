@@ -4,7 +4,6 @@ export const config = {
 
 const DEST = (process.env.TARGET_DOMAIN || "").replace(/\/$/, "");
 
-// کد HTML مستقیماً داخل متغیر قرار می‌گیرد تا فایل index.html هم حذف شود
 const template = `
 <!DOCTYPE HTML>
 <html lang="en">
@@ -19,25 +18,25 @@ const template = `
     </style>
 </head>
 <body>
-    <div class="box">
-        <span class="pulse"></span> System Monitoring Active
-    </div>
+    <div class="box"><span class="pulse"></span> System Monitoring Active</div>
 </body>
 </html>
 `;
 
 export default async function (req) {
   const url = new URL(req.url);
-
-  // یک مسیر بسیار طولانی و رندوم که حدس زدنش غیرممکن باشد
-  const secretPath = "/api/v1/internal/logs/stream/data/7db92ae"; 
+  const secretPath = "/api/v1/internal/logs/stream/data/7db92ae";
 
   if (url.pathname.startsWith(secretPath)) {
     try {
-      const targetUrl = DEST + url.pathname.replace(secretPath, "") + url.search;
+      // پیدا کردن مسیر بعد از کلمه کلیدی ما
+      const remainingPath = url.pathname.replace(secretPath, "");
+      const targetUrl = DEST + (remainingPath.startsWith("/") ? remainingPath : "/" + remainingPath) + url.search;
+
       const newHeaders = new Headers(req.headers);
       newHeaders.delete("host");
       newHeaders.delete("x-vercel-id");
+      newHeaders.delete("x-forwarded-for");
 
       return await fetch(targetUrl, {
         method: req.method,
@@ -46,11 +45,10 @@ export default async function (req) {
         redirect: "manual",
       });
     } catch (e) {
-      return new Response(null, { status: 500 });
+      return new Response("Bridge Error", { status: 502 });
     }
   }
 
-  // در تمام مسیرهای دیگر، فقط صفحه مانیتورینگ صوری نشان داده می‌شود
   return new Response(template, {
     headers: { "content-type": "text/html; charset=utf-8" },
   });
