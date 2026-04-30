@@ -1,42 +1,58 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آوا پردازش - راهکارهای ابری</title>
+    <title>NovaCloud | Next-Gen Edge Infrastructure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: Tahoma, Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
-        header { background-color: #0056b3; color: white; padding: 1.5rem 0; text-align: center; }
-        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        .hero { background: white; padding: 3rem 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
-        .hero h1 { margin-top: 0; color: #0056b3; }
-        .services { display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
-        .service-card { flex: 1; min-width: 250px; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        footer { text-align: center; margin-top: 3rem; padding: 1rem 0; color: #666; font-size: 0.9rem; }
+        body { background-color: #0f172a; color: #f8fafc; }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body>
-    <header>
-        <h2>گروه فناوری آوا پردازش</h2>
-    </header>
-    <div class="container">
-        <div class="hero">
-            <h1>توسعه و استقرار راهکارهای نوین ابری</h1>
-            <p>ما به کسب‌وکارها کمک می‌کنیم تا زیرساخت‌های خود را با بالاترین ضریب امنیت و پایداری به فضای ابری منتقل کنند. بهینه‌سازی، مهندسی زیرساخت و نظارت هوشمند تخصص ماست.</p>
+<body class="antialiased">
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="text-2xl font-bold tracking-tighter">NOVA<span class="text-sky-500">CLOUD</span></div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+            <a href="#" class="hover:text-white">Solutions</a>
+            <a href="#" class="hover:text-white">Network</a>
+            <a href="#" class="hover:text-white">Pricing</a>
         </div>
-        <div class="services">
-            <div class="service-card">
-                <h3>امنیت و مانیتورینگ</h3>
-                <p>بررسی و تحلیل ترافیک داده‌ها با استفاده از جدیدترین متدهای دفاع سایبری.</p>
-            </div>
-            <div class="service-card">
-                <h3>یکپارچه‌سازی سیستم‌ها</h3>
-                <p>اتصال امن و سریع بین پایگاه‌های داده و سرویس‌های فرانت‌اند.</p>
+        <button class="bg-sky-600 hover:bg-sky-500 px-5 py-2 rounded-full text-sm font-semibold">Console</button>
+    </nav>
+    <main class="max-w-7xl mx-auto px-6 pt-20 pb-32">
+        <div class="text-center">
+            <span class="text-sky-500 text-sm font-semibold tracking-widest uppercase">Global Edge Network</span>
+            <h1 class="mt-4 text-5xl md:text-7xl font-extrabold tracking-tight">Deploy at the speed of <span class="gradient-text">light.</span></h1>
+            <p class="mt-6 text-lg text-slate-400 max-w-2xl mx-auto">NovaCloud provides a high-performance, low-latency infrastructure for enterprise-grade applications. Secure your data flow with our advanced identity-aware proxying.</p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#" class="bg-white text-slate-900 px-8 py-3 rounded-lg font-bold">Start Deploying</a>
+                <a href="#" class="border border-slate-700 px-8 py-3 rounded-lg font-bold hover:bg-slate-800 transition">Contact Sales</a>
             </div>
         </div>
-        <footer>
-            &copy; 2026 گروه فناوری آوا پردازش. تمامی حقوق محفوظ است.
-        </footer>
-    </div>
+        <div class="mt-24 grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                <div class="w-12 h-12 bg-sky-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold">Ultra-Low Latency</h3>
+                <p class="text-slate-400 mt-2">Global distribution points ensure your functions run exactly where your users are.</p>
+            </div>
+            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                <div class="w-12 h-12 bg-indigo-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold">Identity-Aware</h3>
+                <p class="text-slate-400 mt-2">Zero-trust security layers built directly into our edge routing logic.</p>
+            </div>
+            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold">Global Compliance</h3>
+                <p class="text-slate-400 mt-2">Fully compliant with international data residency and security standards.</p>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
