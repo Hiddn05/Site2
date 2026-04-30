@@ -1,0 +1,8 @@
+{
+  "name": "ava-cloud-portal",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Internal business landing page and data gateway for Ava Processing",
+  "private": true,
+  "license": "MIT"
+}
