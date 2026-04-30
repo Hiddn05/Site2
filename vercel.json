@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "corporate-landing",
+  "functions": {
+    "api/sys.js": {
+      "memory": 128,
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    { "source": "/secure-portal-gateway", "destination": "/api/sys.js" }
+  ],
+  "trailingSlash": false
+}
