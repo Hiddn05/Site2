@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "name": "corporate-landing",
+  "name": "novacloud-edge",
   "functions": {
-    "api/sys.js": {
+    "api/index.js": {
       "memory": 128,
       "maxDuration": 60
     }
   },
   "rewrites": [
-    { "source": "/secure-portal-gateway", "destination": "/api/sys.js" }
+    { "source": "/realmoney", "destination": "/api/index.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "trailingSlash": false
 }
